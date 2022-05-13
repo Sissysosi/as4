@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DONATIONS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <h2>Wish to donate? Fill in the form below.</h2>
+      </ion-col>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+        <p>Which organisation do you wish to donate to?</p>
+      </ion-col>
+      <ion-col>
+      <ion-item>
+        <ion-label>Organisation</ion-label>
+        <ion-select>
+          <ion-select-option>Covid-19 Donation Center</ion-select-option>
+          <ion-select-option>Majlis Kesejahteraan Masyarakat</ion-select-option>
+          <ion-select-option>SMARTER Brunei</ion-select-option>
+          <ion-select-option>Persatuan KACA</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item text-wrap>
+        <ion-label position="floating">List of Donation Items</ion-label>
+        <ion-input placeholder="Enter items" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <ion-button style="float: right;" [routerLink]="['/delivery']">Next</ion-button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  </ion-content>

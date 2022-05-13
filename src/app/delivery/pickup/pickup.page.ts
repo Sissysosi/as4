@@ -32,7 +32,7 @@ export class PickupPage implements OnInit {
           text: "Okay",
           handler: () => {
             console.log("Submit the form");
-            this.navCtrl.navigateRoot('/home'); //ubah kepayment
+            this.navCtrl.navigateRoot('/payment'); //ubah kepayment
           },
         },
       ],

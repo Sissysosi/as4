@@ -1,6 +1,7 @@
 {
   "name": "donate",
   "integrations": {
+    "cordova": {},
     "capacitor": {}
   },
   "type": "angular"

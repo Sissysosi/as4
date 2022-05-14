@@ -25,10 +25,19 @@
       </ion-item>
     </ion-col>
     <ion-col>
-      <ion-item text-wrap>
+      <ion-item>
         <ion-label position="floating">List of Donation Items</ion-label>
         <ion-input placeholder="Enter items" type="text"></ion-input>
       </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Take a photo of donated items</ion-label>
+        <ion-button (click)="takeSnap()">
+          Take Photo
+        </ion-button>
+      </ion-item>
+      <img [src]="capturedSnapURL" />
     </ion-col>
   </ion-row>
   <ion-row>

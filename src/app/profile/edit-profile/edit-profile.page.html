@@ -1,34 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>EDIT profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content style="color: white;">
 <img src="" alt="">
 <div style="color: bisque;">
+  <form (ngSubmit)="changeusername()" [formGroup]="usernamedetail">
+
 <ion-grid>
-  <ion-row>
-    <ion-col>
-      <ion-label>Username : </ion-label>
-      <ion-input></ion-input>
-     </ion-col>
-   </ion-row>
 
-   <ion-row>
-    <ion-col>
-      <ion-label>Password : </ion-label>
-      <ion-input></ion-input>
-     </ion-col>
-   </ion-row>
-
-   <ion-row>
-    <ion-col>
-      <ion-label>Email : </ion-label>
-      <ion-input></ion-input>
-     </ion-col>
-   </ion-row>
+  <!-- for username -->
+    <ion-row>
+       <ion-col>
+         <ion-label>Username : </ion-label>
+         <ion-input placeholder="click to change username" type="text" formControllerName="username"></ion-input>
+         <!-- <p class="ion-text-center">User email : <strong>{{ userDetail }}</strong></p> -->
+        </ion-col>
+      </ion-row>
+      <ion-item>
+    <ion-button type="submit">Edit</ion-button>
+   </ion-item>
+      <!-- for password -->
+    <form (ngSubmit)="changepassword()" [formGroup]="pswdetail">
+     <ion-row>
+        <ion-col>
+          <ion-label>password : </ion-label>
+          <ion-input placeholder="click to change password" type="password" formControllerName="passsword"></ion-input>
+          <!-- <p class="ion-text-center">User email : <strong>{{ userDetail }}</strong></p> -->
+         </ion-col>
+       </ion-row>
+       </form>
 </ion-grid>
+</form>
+
 </div> 
 <ion-button  expand="block"  (click)="savechanges()">Save</ion-button>
   <ion-button  expand="block"  (click)="dismiss()" >Cancel</ion-button>

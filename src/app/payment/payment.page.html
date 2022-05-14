@@ -1,9 +1,68 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>payment</ion-title>
+    <ion-title>
+     Payment
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Payment Management</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+
+  <div id="container">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <p>Please enter your card credentials to proceed to payment</p>
+        </ion-col>
+      </ion-row>
+
+      <br>
+
+      <ion-row>
+        <ion-col>
+          <ion-label floating>Card Number:</ion-label>
+          <ion-input type="number"></ion-input>
+         </ion-col>
+       </ion-row>
+
+       <br>
+
+       <ion-row>
+        <ion-col>
+          <ion-label>Expired date:</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+         </ion-col>
+       </ion-row>
+
+       <br>
+    
+       <ion-row>
+        <ion-col>
+          <ion-label>Card CVC/CVV: </ion-label>
+          <ion-input type="number"></ion-input>
+         </ion-col>
+       </ion-row>
+
+       <br>
+    
+       <ion-row>
+        <ion-col>
+          <ion-label>Total Amount: </ion-label>
+          <ion-input type="number"></ion-input>  
+         </ion-col>
+       </ion-row>
+    </ion-grid>
+
+    <br>
+
+    <ion-button color="dark" (click)="presentAlert()">OK</ion-button>
+  </div>
 </ion-content>
+

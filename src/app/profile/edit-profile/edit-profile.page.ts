@@ -10,6 +10,7 @@ export class EditProfilePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // this.username = console.log("test");
   }
 
 }

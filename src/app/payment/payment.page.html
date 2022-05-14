@@ -1,71 +1,81 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-     Payment
-    </ion-title>
+     Payment</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/delivery"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="medium">Payment Management</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <h4 class="ion-text-center">Please enter your card credentials to proceed payment</h4><br>
+      <ion-list>
+
+        
+          <img style="width: 100px; height: 70px; display: inline; margin-left: 7%;"  src="../../assets/bibd.jpg" alt="">
+          <img style="width: 100px; height: 70px; display: inline; margin-left: 7%;"  src="../../assets/baiduri.png" alt="">
+          <img style="width: 100px; height: 70px; display: inline; margin-left: 7%"  src="../../assets/taib.png" alt="">
 
 
-  <div id="container">
-    <ion-grid>
-
-      <ion-row>
-        <ion-col>
-          <p>Please enter your card credentials to proceed to payment</p>
-        </ion-col>
-      </ion-row>
+      <ion-item>
+          <ion-label color="primary" floating>Card Holder Name</ion-label>
+          <ion-input ngModel type="text" name="cardname" #cardCtrl="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!cardCtrl.valid && cardCtrl.touched" lines="none">
+        <ion-label class="errorMsg">Field should not be empty</ion-label>
+      </ion-item>
 
       <br>
 
-      <ion-row>
-        <ion-col>
-          <ion-label floating>Card Number:</ion-label>
-          <ion-input type="number"></ion-input>
-         </ion-col>
-       </ion-row>
+        <ion-item>
+            <ion-label color="primary" floating>Card Number</ion-label>
+            <ion-input ngModel type="number" name="cardnumber" #cardCtrl="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!cardCtrl.valid && cardCtrl.touched" lines="none">
+          <ion-label class="errorMsg">Please enter a valid card number</ion-label>
+        </ion-item>
 
-       <br>
+        <br>
 
-       <ion-row>
-        <ion-col>
-          <ion-label>Expired date:</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
-         </ion-col>
-       </ion-row>
+        <ion-item>
+          <ion-label color="primary" floating>Card CVC</ion-label>
+          <ion-input ngModel type="number" name="cvc" #cardCtrl="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!cardCtrl.valid && cardCtrl.touched" lines="none">
+          <ion-label class="errorMsg">The 3 or 4 digits at the back of your card</ion-label>
+        </ion-item>
 
-       <br>
-    
-       <ion-row>
-        <ion-col>
-          <ion-label>Card CVC/CVV: </ion-label>
-          <ion-input type="number"></ion-input>
-         </ion-col>
-       </ion-row>
+        <br>
 
-       <br>
-    
-       <ion-row>
-        <ion-col>
-          <ion-label>Total Amount: </ion-label>
-          <ion-input type="number"></ion-input>  
-         </ion-col>
-       </ion-row>
-    </ion-grid>
+        <ion-item>
+          <ion-label color="primary" floating>Expired date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY"  min="2022-01-01" max="2023-12-31" required></ion-datetime>
+        </ion-item>
+
+        <br>
+
+        <ion-item>
+          <ion-label>Total Amount: BND $ </ion-label>
+          <ion-input ngModel type="number" name="cvc" #cardCtrl="ngModel" required></ion-input>  
+        </ion-item>
+        <ion-item *ngIf="!cardCtrl.valid && cardCtrl.touched" lines="none">
+          <ion-label class="errorMsg">Specify the amount you wish to pay</ion-label>
+        </ion-item>
+
+        <br>
+
+      </ion-list>
 
     <br>
 
-    <ion-button color="dark" (click)="presentAlert()">OK</ion-button>
-  </div>
+    <ion-row>
+      <ion-col>
+        <ion-button style="width:100%; margin:auto;" (click)="showPrompt()" shape="round">Done</ion-button>
+      </ion-col>
+    </ion-row>
+
+   
+ 
 </ion-content>
 

@@ -18,6 +18,8 @@
       <ion-label class="errorMsg">Please Enter Your Address.</ion-label>
     </ion-item>
 
+    <br>
+
     <ion-item>
       <ion-label color="primary" floating>Location</ion-label>
       <ion-input ngModel type="text" name="location" #locationCtrl="ngModel" required></ion-input>
@@ -26,15 +28,19 @@
       <ion-label class="errorMsg">Please Enter Your Location.</ion-label>
     </ion-item>
 
+    <br>
+
     <ion-item>
       <ion-label color="primary" floating>Time and Date To Pick-Up</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" min="2022-01-01" max="2023-12-31" required></ion-datetime> 
     </ion-item>
     </ion-list>
 
+    <br>
+
     <ion-row>
       <ion-col>
-        <ion-button style="width:550px; margin:auto;" (click)="showPrompt()" shape="round" expand="block">Done</ion-button>
+        <ion-button style="width:100%; margin:auto;" (click)="showPrompt()" shape="round" expand="block">Done</ion-button>
       </ion-col>
     </ion-row>
 
